@@ -1,0 +1,6 @@
+C:\Users\gabri\Documents\ufu\2018\POO\POOB\2DVector\2DVector\obj\Debug\2DVector.csprojResolveAssemblyReference.cache
+C:\Users\gabri\Documents\ufu\2018\POO\POOB\2DVector\2DVector\obj\Debug\2DVector.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Documents\ufu\2018\POO\POOB\2DVector\2DVector\bin\Debug\2DVector.exe
+C:\Users\gabri\Documents\ufu\2018\POO\POOB\2DVector\2DVector\bin\Debug\2DVector.pdb
+C:\Users\gabri\Documents\ufu\2018\POO\POOB\2DVector\2DVector\obj\Debug\2DVector.exe
+C:\Users\gabri\Documents\ufu\2018\POO\POOB\2DVector\2DVector\obj\Debug\2DVector.pdb
