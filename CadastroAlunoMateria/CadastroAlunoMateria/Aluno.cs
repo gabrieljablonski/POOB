@@ -9,24 +9,23 @@ namespace CadastroAlunoMateria
     {
         private String nome;
         private String matricula;
-        private HashSet<int> materias;
+        private HashSet<Materia> materias;
 
         public Aluno(String nome, String matricula)
         {
             this.nome = nome;
             this.matricula = matricula;
-            this.materias = new HashSet<int>();
+            this.materias = new HashSet<Materia>();
         }
 
-        public void cadastrarMateria(int codigo_index)
+        public void cadastrarMateria(Materia materia)
         {
-            this.materias.Add(codigo_index);
+            this.materias.Add(materia);
         }
 
-        public void descadastrarMateria(int index)
+        public void descadastrarMateria(int materia_n)
         {
-            if (index == -1) this.materias.Clear();
-            else this.materias.Remove(index);
+            this.materias.Remove(this.materias.ElementAt(materia_n));
         }
 
         public String getNome()
@@ -39,7 +38,7 @@ namespace CadastroAlunoMateria
             return this.matricula;
         }
 
-        public HashSet<int> getMaterias()
+        public HashSet<Materia> getMaterias()
         {
             return this.materias;
         }

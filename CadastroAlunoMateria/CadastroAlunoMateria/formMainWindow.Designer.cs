@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageAluno = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnRemoverAluno = new System.Windows.Forms.Button();
             this.btnAdicionarAluno = new System.Windows.Forms.Button();
             this.dataGridAlunos = new System.Windows.Forms.DataGridView();
             this.colANum = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +47,6 @@
             this.tabPageMateria = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdicionarMateria = new System.Windows.Forms.Button();
-            this.btnRemoverMateria = new System.Windows.Forms.Button();
             this.dataGridMaterias = new System.Windows.Forms.DataGridView();
             this.colMCod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,9 +102,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.87342F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.12658F));
-            this.tableLayoutPanel1.Controls.Add(this.btnRemoverAluno, 1, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.38123F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.61877F));
             this.tableLayoutPanel1.Controls.Add(this.btnAdicionarAluno, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dataGridAlunos, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -120,23 +117,12 @@
             this.tableLayoutPanel1.TabIndex = 4;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // btnRemoverAluno
-            // 
-            this.btnRemoverAluno.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRemoverAluno.Location = new System.Drawing.Point(343, 3);
-            this.btnRemoverAluno.Name = "btnRemoverAluno";
-            this.btnRemoverAluno.Size = new System.Drawing.Size(336, 37);
-            this.btnRemoverAluno.TabIndex = 1;
-            this.btnRemoverAluno.Text = "Remover aluno";
-            this.btnRemoverAluno.UseVisualStyleBackColor = true;
-            this.btnRemoverAluno.Click += new System.EventHandler(this.btnRemover_Click);
-            // 
             // btnAdicionarAluno
             // 
             this.btnAdicionarAluno.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAdicionarAluno.Location = new System.Drawing.Point(3, 3);
             this.btnAdicionarAluno.Name = "btnAdicionarAluno";
-            this.btnAdicionarAluno.Size = new System.Drawing.Size(334, 37);
+            this.btnAdicionarAluno.Size = new System.Drawing.Size(132, 37);
             this.btnAdicionarAluno.TabIndex = 0;
             this.btnAdicionarAluno.Text = "Adicionar aluno";
             this.btnAdicionarAluno.UseVisualStyleBackColor = true;
@@ -162,12 +148,13 @@
             this.dataGridAlunos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridAlunos.Size = new System.Drawing.Size(676, 280);
             this.dataGridAlunos.TabIndex = 2;
+            this.dataGridAlunos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAlunos_CellContentClick);
             // 
             // colANum
             // 
             this.colANum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colANum.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colANum.DefaultCellStyle = dataGridViewCellStyle9;
             this.colANum.FillWeight = 30.45685F;
             this.colANum.HeaderText = "#";
             this.colANum.Name = "colANum";
@@ -187,8 +174,8 @@
             // colAMat
             // 
             this.colAMat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colAMat.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colAMat.DefaultCellStyle = dataGridViewCellStyle10;
             this.colAMat.FillWeight = 134.7716F;
             this.colAMat.HeaderText = "Número de Matrícula";
             this.colAMat.Name = "colAMat";
@@ -209,10 +196,9 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.52786F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.47214F));
             this.tableLayoutPanel2.Controls.Add(this.btnAdicionarMateria, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnRemoverMateria, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.dataGridMaterias, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
@@ -228,22 +214,11 @@
             this.btnAdicionarMateria.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAdicionarMateria.Location = new System.Drawing.Point(3, 3);
             this.btnAdicionarMateria.Name = "btnAdicionarMateria";
-            this.btnAdicionarMateria.Size = new System.Drawing.Size(335, 37);
+            this.btnAdicionarMateria.Size = new System.Drawing.Size(133, 37);
             this.btnAdicionarMateria.TabIndex = 0;
             this.btnAdicionarMateria.Text = "Adicionar matéria";
             this.btnAdicionarMateria.UseVisualStyleBackColor = true;
             this.btnAdicionarMateria.Click += new System.EventHandler(this.btnAdicionarMateria_Click);
-            // 
-            // btnRemoverMateria
-            // 
-            this.btnRemoverMateria.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRemoverMateria.Location = new System.Drawing.Point(344, 3);
-            this.btnRemoverMateria.Name = "btnRemoverMateria";
-            this.btnRemoverMateria.Size = new System.Drawing.Size(335, 37);
-            this.btnRemoverMateria.TabIndex = 1;
-            this.btnRemoverMateria.Text = "Remover matéria";
-            this.btnRemoverMateria.UseVisualStyleBackColor = true;
-            this.btnRemoverMateria.Click += new System.EventHandler(this.btnRemoverMateria_Click);
             // 
             // dataGridMaterias
             // 
@@ -269,8 +244,8 @@
             // colMCod
             // 
             this.colMCod.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colMCod.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colMCod.DefaultCellStyle = dataGridViewCellStyle11;
             this.colMCod.FillWeight = 49.80088F;
             this.colMCod.HeaderText = "Código";
             this.colMCod.Name = "colMCod";
@@ -279,8 +254,8 @@
             // colMNome
             // 
             this.colMNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colMNome.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colMNome.DefaultCellStyle = dataGridViewCellStyle12;
             this.colMNome.FillWeight = 97.91485F;
             this.colMNome.HeaderText = "Nome";
             this.colMNome.Name = "colMNome";
@@ -289,8 +264,8 @@
             // colMProf
             // 
             this.colMProf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colMProf.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colMProf.DefaultCellStyle = dataGridViewCellStyle13;
             this.colMProf.FillWeight = 152.2843F;
             this.colMProf.HeaderText = "Professor";
             this.colMProf.Name = "colMProf";
@@ -416,8 +391,8 @@
             // colRCod
             // 
             this.colRCod.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colRCod.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colRCod.DefaultCellStyle = dataGridViewCellStyle14;
             this.colRCod.FillWeight = 30F;
             this.colRCod.HeaderText = "Código";
             this.colRCod.Name = "colRCod";
@@ -426,8 +401,8 @@
             // colRNome
             // 
             this.colRNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colRNome.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colRNome.DefaultCellStyle = dataGridViewCellStyle15;
             this.colRNome.FillWeight = 73.85786F;
             this.colRNome.HeaderText = "Nome";
             this.colRNome.Name = "colRNome";
@@ -436,8 +411,8 @@
             // colRProf
             // 
             this.colRProf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colRProf.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colRProf.DefaultCellStyle = dataGridViewCellStyle16;
             this.colRProf.FillWeight = 73.85786F;
             this.colRProf.HeaderText = "Professor";
             this.colRProf.Name = "colRProf";
@@ -477,13 +452,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridAlunos;
         private System.Windows.Forms.Button btnAdicionarAluno;
-        private System.Windows.Forms.Button btnRemoverAluno;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colANum;
         private System.Windows.Forms.DataGridViewTextBoxColumn colANome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAMat;
         private System.Windows.Forms.Button btnAdicionarMateria;
-        private System.Windows.Forms.Button btnRemoverMateria;
         private System.Windows.Forms.DataGridView dataGridMaterias;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMCod;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMNome;

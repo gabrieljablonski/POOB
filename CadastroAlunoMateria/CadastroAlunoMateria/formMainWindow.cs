@@ -9,6 +9,7 @@ namespace CadastroAlunoMateria
         private int alunos_cadastrados = 0;
 
         private List<Aluno> alunos = new List<Aluno>();
+        private List<Materia> materias = new List<Materia>();
 
         public formMainWindow()
         {
@@ -27,45 +28,44 @@ namespace CadastroAlunoMateria
         {
             this.dataGridMaterias.Rows.Add(codigo, nome, professor);
             this.dataGridMaterias.FirstDisplayedScrollingRowIndex = dataGridMaterias.RowCount - 1;
+            this.materias.Add(new Materia(codigo, nome, professor));
         }
 
-        public void cadastrarMateria(int codigo)
+        public void cadastrarMateria(int materia_n)
         {
-            this.alunos[this.comboAlunos.SelectedIndex].cadastrarMateria(codigo);
+            int selected = this.dataGridRelatorio.Rows.GetFirstRow(DataGridViewElementStates.Selected);
+            this.alunos[this.comboAlunos.SelectedIndex].cadastrarMateria(this.materias[materia_n]);
+            this.atualizaCadastros();
         }
 
         public void atualizaCadastros()
         {
             this.dataGridRelatorio.Rows.Clear();
-            HashSet<int> materias = this.alunos[this.comboAlunos.SelectedIndex].getMaterias();
-            foreach (int materia_n in materias)
+            HashSet<Materia> materias = this.alunos[this.comboAlunos.SelectedIndex].getMaterias();
+            foreach (Materia materia in materias)
             {
-                this.dataGridRelatorio.Rows.Add(this.dataGridMaterias[0, materia_n].Value, this.dataGridMaterias[1, materia_n].Value, this.dataGridMaterias[2, materia_n].Value);
+                this.dataGridRelatorio.Rows.Add(materia.getCodigo(), materia.getNome(), materia.getProfessor());
             }
             if (dataGridRelatorio.RowCount != 0)
             {
-                this.dataGridRelatorio.FirstDisplayedScrollingRowIndex = dataGridRelatorio.RowCount - 1;
+                this.dataGridRelatorio.FirstDisplayedScrollingRowIndex = dataGridRelatorio.RowCount - 1; // Scroll to bottom
             }
 
         }
 
         public List<String> getCodigos()
         {
-            DataGridViewRowCollection rows = this.dataGridMaterias.Rows;
             List<String> codigos = new List<String>();
-            for(int row_n=0; row_n < rows.Count; row_n++)
+            
+            foreach(Materia materia in this.materias)
             {
-                codigos.Add(rows[row_n].Cells[0].Value.ToString());
+                codigos.Add(materia.getCodigo());
             }
+
             return codigos;
         }
 
         // Events
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void tabPageAluno_Click(object sender, EventArgs e)
         {
 
@@ -82,21 +82,6 @@ namespace CadastroAlunoMateria
             novo_aluno.ShowDialog();
         }
 
-        private void btnRemover_Click(object sender, EventArgs e)
-        {
-            int selected = this.dataGridAlunos.Rows.GetFirstRow(DataGridViewElementStates.Selected);
-            if (selected != -1)
-            {
-                this.dataGridAlunos.Rows.RemoveAt(selected);
-                this.alunos.RemoveAt(selected);
-                this.alunos_cadastrados--;
-            }
-            for(int i=0; i<this.dataGridAlunos.RowCount; i++)
-            {
-                this.dataGridAlunos[0, i].Value = i + 1;
-            }
-        }
-
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -106,15 +91,6 @@ namespace CadastroAlunoMateria
         {
             formNovaMateria nova_materia = new formNovaMateria(this);
             nova_materia.ShowDialog();
-        }
-
-        private void btnRemoverMateria_Click(object sender, EventArgs e)
-        {
-            int selected = this.dataGridMaterias.Rows.GetFirstRow(DataGridViewElementStates.Selected);
-            if (selected != -1)
-            {
-                this.dataGridMaterias.Rows.RemoveAt(selected);
-            }
         }
 
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
@@ -165,9 +141,16 @@ namespace CadastroAlunoMateria
         private void btnRemoverCadastro_Click(object sender, EventArgs e)
         {
             int selected = this.dataGridRelatorio.Rows.GetFirstRow(DataGridViewElementStates.Selected);
+            if (selected != -1)
+            {
+                this.alunos[this.comboAlunos.SelectedIndex].descadastrarMateria(selected);
+                this.atualizaCadastros();
+            }
+        }
 
-            this.alunos[this.comboAlunos.SelectedIndex].descadastrarMateria(selected);
-            this.atualizaCadastros();
+        private void dataGridAlunos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
