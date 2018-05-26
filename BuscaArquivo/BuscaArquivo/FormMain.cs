@@ -20,6 +20,7 @@ namespace BuscaArquivo
         public FormMain()
         {
             InitializeComponent();
+            
             this.last_is_file = false;
             this.last_file_content = "";
             this.last_path = "";
@@ -28,7 +29,7 @@ namespace BuscaArquivo
         private void txtPathInput_KeyUp(object sender, KeyEventArgs e)
         {
             string path = this.last_path = this.txtPathInput.Text;
-            if(e.KeyCode == Keys.Enter && path != "")
+            if (e.KeyCode == Keys.Enter && path != "")
             {
                 string text_output = "";
                 this.txtPathOutput.Clear();
@@ -60,10 +61,10 @@ namespace BuscaArquivo
                 {
                     this.last_is_file = false;
 
-                    text_output += "Arquivo: " + path + "\n\n";
-                    text_output += "Arquivo criado em: " + Directory.GetCreationTime(path) + "\n";
-                    text_output += "Arquivo modificado pela última vez em: " + Directory.GetLastWriteTime(path) + "\n";
-                    text_output += "Arquivo acessado pela última vez em: " + Directory.GetLastAccessTime(path) + "\n\n";
+                    text_output += "Diretório: " + path + "\n\n";
+                    text_output += "Diretório criado em: " + Directory.GetCreationTime(path) + "\n";
+                    text_output += "Diretório modificado pela última vez em: " + Directory.GetLastWriteTime(path) + "\n";
+                    text_output += "Diretório acessado pela última vez em: " + Directory.GetLastAccessTime(path) + "\n\n";
 
                     text_output += "Subdiretórios: \n";
                     foreach (string line in Directory.GetDirectories(path))
@@ -81,6 +82,7 @@ namespace BuscaArquivo
                 }
                 else
                 {
+                    this.txtPathInput.Clear();
                     MessageBox.Show("Arquivo ou diretório não encontrado.", "Caminho incorreto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

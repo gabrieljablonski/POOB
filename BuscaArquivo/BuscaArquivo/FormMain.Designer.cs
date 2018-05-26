@@ -77,7 +77,7 @@
             // 
             // txtPathInput
             // 
-            this.txtPathInput.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtPathInput.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPathInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPathInput.Location = new System.Drawing.Point(15, 46);
             this.txtPathInput.Margin = new System.Windows.Forms.Padding(15);
